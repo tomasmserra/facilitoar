@@ -5,10 +5,11 @@ import jsPDF from 'jspdf';
 
 const LandingPage: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const pdfContentRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
   const downloadPDF = async () => {
-    if (!contentRef.current) return;
+    if (!pdfContentRef.current) return;
     
     setIsGenerating(true);
     
@@ -20,20 +21,39 @@ const LandingPage: React.FC = () => {
       const downloadButton = document.querySelector('[data-pdf-button]') as HTMLElement;
       if (downloadButton) downloadButton.style.display = 'none';
       
-      // Capturar el contenido con mejor calidad
-      const canvas = await html2canvas(contentRef.current, {
+      // Mostrar el contenido PDF temporalmente
+      if (pdfContentRef.current) {
+        pdfContentRef.current.style.position = 'fixed';
+        pdfContentRef.current.style.left = '0';
+        pdfContentRef.current.style.top = '0';
+        pdfContentRef.current.style.width = '794px'; // 210mm en píxeles a 96 DPI
+        pdfContentRef.current.style.maxWidth = '794px';
+        pdfContentRef.current.style.zIndex = '9999';
+        pdfContentRef.current.style.display = 'block';
+      }
+      
+      // Esperar un momento para que se renderice
+      await new Promise(resolve => setTimeout(resolve, 200));
+      
+      // Capturar el contenido con fondo blanco
+      const canvas = await html2canvas(pdfContentRef.current, {
         scale: 2,
         useCORS: true,
         logging: false,
-        backgroundColor: '#111827', // gray-950
-        windowWidth: contentRef.current.scrollWidth,
-        windowHeight: contentRef.current.scrollHeight,
+        backgroundColor: '#ffffff', // Fondo blanco
+        width: 794, // 210mm en píxeles a 96 DPI
+        height: pdfContentRef.current.scrollHeight,
         allowTaint: true,
         removeContainer: false,
       });
       
+      // Ocultar el contenido PDF
+      if (pdfContentRef.current) {
+        pdfContentRef.current.style.display = 'none';
+      }
+      
       // Restaurar el botón
-      if (downloadButton) downloadButton.style.display = 'none';
+      if (downloadButton) downloadButton.style.display = 'flex';
       
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm
@@ -110,10 +130,220 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div ref={contentRef} className="min-h-screen bg-gray-950 text-white relative">
-      {/* Botón de descarga PDF */}
+    <>
+      {/* Contenido PDF oculto con fondo blanco */}
+      <div ref={pdfContentRef} style={{ display: 'none', width: '794px', backgroundColor: '#ffffff' }} className="bg-white text-gray-900">
+        <div style={{ padding: '10px 20px 20px 20px', width: '100%', maxWidth: '794px', margin: '0 auto', boxSizing: 'border-box' }}>
+          {/* Header */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <img
+                src="/img/logoTrnasparenteVerde.png"
+                alt="Facilito.ar"
+                style={{ height: '80px', objectFit: 'contain' }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ fontSize: '20px', fontWeight: 800, color: '#111827', marginBottom: '2px', lineHeight: '1.2' }}>
+                  Facilito.ar
+                </div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#16a34a', lineHeight: '1.2' }}>
+                  Soluciones Tecnológicas de alto impacto
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Título principal sobre imagen + texto */}
+          <div style={{ marginBottom: '16px', textAlign: 'center' }}>
+            <h1 style={{
+              fontSize: '24px',
+              fontWeight: 800,
+              marginBottom: '8px',
+              color: '#111827'
+            }}>
+              Especialistas en automatización y tecnología a medida
+            </h1>
+          </div>
+
+          {/* Imagen + texto principal */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1.9fr', gap: '20px', alignItems: 'center', marginBottom: '28px' }}>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Equipo Facilito.ar"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+            <div>
+              <p style={{
+                fontSize: '15px',
+                color: '#4b5563',
+                lineHeight: '1.7',
+                marginBottom: '8px'
+              }}>
+                En <strong style={{ color: '#22c55e' }}>Facilito.ar</strong> ayudamos a empresas a optimizar sus procesos,
+                reducir tareas manuales y ganar eficiencia mediante soluciones tecnológicas pensadas
+                específicamente para su realidad.
+              </p>
+              <p style={{
+                fontSize: '15px',
+                color: '#4b5563',
+                lineHeight: '1.7',
+                marginBottom: '0'
+              }}>
+                Combinamos automatización, desarrollo de software y soporte IT para construir
+                un ecosistema digital simple, escalable y de alto impacto.
+              </p>
+            </div>
+          </div>
+          {/* Servicios */}
+          <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ 
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#22c55e',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              marginBottom: '10px',
+              textAlign: 'center'
+            }}>
+              Nuestros Servicios
+            </h2>
+            <h3 style={{ 
+              fontSize: '28px',
+              fontWeight: '800',
+              marginBottom: '20px',
+              textAlign: 'center',
+              color: '#111827'
+            }}>
+              Tecnología para escalar tu negocio
+            </h3>
+            <div style={{ 
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '12px'
+            }}>
+              {[
+                { icon: Cpu, title: 'Automatización de Procesos (RPA)', desc: 'Eliminamos tareas repetitivas mediante robots de software.' },
+                { icon: Code, title: 'Desarrollo de Software', desc: 'Creamos soluciones a medida, desde aplicaciones web hasta sistemas complejos.' },
+                { icon: Headphones, title: 'Soporte IT Corporativo', desc: 'Mantenimiento preventivo y correctivo, helpdesk y soporte técnico.' },
+                { icon: BarChart, title: 'Consultoría en Datos', desc: 'Transformamos tus datos en información valiosa mediante dashboards.' },
+                { icon: Database, title: 'Integración de Sistemas', desc: 'Conectamos tus herramientas para un flujo de información unificado.' },
+                { icon: Zap, title: 'Inteligencia Artificial', desc: 'Implementamos soluciones de IA generativa para tu negocio.' }
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  style={{
+                    padding: '14px 16px',
+                    backgroundColor: '#f9fafb',
+                    borderRadius: '10px',
+                    border: '1px solid #e5e7eb',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '12px'
+                  }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: '#dcfce7',
+                      padding: '8px',
+                      borderRadius: '8px',
+                      flexShrink: 0,
+                      marginTop: '2px'
+                    }}
+                  >
+                    <service.icon size={20} style={{ color: '#22c55e' }} />
+                  </div>
+                  <div>
+                    <h4
+                      style={{
+                        fontSize: '14px',
+                        fontWeight: 700,
+                        marginBottom: '4px',
+                        color: '#111827'
+                      }}
+                    >
+                      {service.title}
+                    </h4>
+                    <p style={{ fontSize: '12px', color: '#6b7280', lineHeight: '1.5' }}>
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Contacto */}
+          <div style={{ 
+            textAlign: 'center',
+            padding: '30px',
+            backgroundColor: '#f0fdf4',
+            borderRadius: '12px',
+            border: '1px solid #22c55e'
+          }}>
+            <h3 style={{ 
+              fontSize: '24px',
+              fontWeight: '800',
+              marginBottom: '15px',
+              color: '#111827'
+            }}>
+              ¿Listo para transformar tu negocio?
+            </h3>
+            <p style={{ fontSize: '16px', color: '#374151', marginBottom: '20px' }}>
+              Contactanos y descubre cómo podemos potenciar tu empresa con tecnología inteligente.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
+              <div style={{ fontSize: '16px', fontWeight: '600', color: '#22c55e' }}>
+                contacto@facilito.ar
+              </div>
+              <div style={{ fontSize: '16px', fontWeight: '600', color: '#22c55e' }}>
+                +54 2936 408362 / +54 11 60031450
+              </div>
+            </div>
+            <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '20px' }}>
+              Carhue, Provincia de Buenos Aires, Argentina
+            </p>
+          </div>
+
+          {/* Footer */}
+          <div style={{ 
+            textAlign: 'center',
+            marginTop: '40px',
+            paddingTop: '20px',
+            borderTop: '1px solid #e5e7eb',
+            fontSize: '12px',
+            color: '#9ca3af'
+          }}>
+            © {new Date().getFullYear()} Facilito.ar - Automatizamos el presente para construir el futuro
+          </div>
+        </div>
+      </div>
+
+      {/* Contenido visible en la web */}
+      <div ref={contentRef} className="min-h-screen bg-gray-950 text-white relative">
+        {/* Botón de descarga PDF */}
+        <button
+          data-pdf-button
+          onClick={downloadPDF}
+          disabled={isGenerating}
+          className="fixed top-6 right-6 z-50 flex items-center space-x-2 px-4 py-3 bg-brand-600 hover:bg-brand-500 disabled:bg-gray-700 disabled:cursor-not-allowed text-white rounded-xl shadow-lg shadow-brand-900/50 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-1"
+          title="Descargar presentación en PDF"
+        >
+          {isGenerating ? (
+            <>
+              <Loader2 className="h-5 w-5 animate-spin" />
+              <span className="font-semibold">Generando...</span>
+            </>
+          ) : (
+            <>
+              <Download className="h-5 w-5" />
+              <span className="font-semibold">Descargar PDF</span>
+            </>
+          )}
+        </button>
     
-      {/* Hero Section */}
+        {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 left-0 right-0 h-full overflow-hidden pointer-events-none">
@@ -307,7 +537,8 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
