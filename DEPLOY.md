@@ -39,6 +39,33 @@ Si tu configuración de Traefik es diferente, ajusta las labels en `docker-compo
 
 ## Deploy
 
+### Opción 0: Deploy automático con GitHub Actions
+
+El repositorio incluye el workflow `.github/workflows/deploy.yml`. Se ejecuta automáticamente con cada push a `main` y también se puede correr manualmente desde la pestaña **Actions** de GitHub.
+
+Configura estos secrets en GitHub: **Settings > Secrets and variables > Actions > New repository secret**.
+
+```bash
+VPS_HOST=facilito-vps1
+VPS_SSH_KEY=-----BEGIN OPENSSH PRIVATE KEY-----
+...
+-----END OPENSSH PRIVATE KEY-----
+```
+
+Opcional, solo si SSH no usa el puerto 22:
+
+```bash
+VPS_PORT=22
+```
+
+El workflow:
+
+1. Instala dependencias con `npm ci`.
+2. Genera el build con `npm run build`.
+3. Sube el código fuente necesario a `/datos/site`.
+4. Sube `dist/` como espejo del build.
+5. Reinicia el contenedor con `docker compose up -d --build`.
+
 ### Opción 1: Deploy con Build Remoto (Recomendado)
 
 Este método construye la imagen directamente en el servidor:
@@ -148,4 +175,3 @@ docker-compose down
 docker-compose up -d
 EOF
 ```
-

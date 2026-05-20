@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Presupuesto from './components/Presupuesto';
 import LandingPage from './components/LandingPage';
+import LegalPage from './components/LegalPage';
 // import Chatbot from './components/Chatbot';
 
 const Home: React.FC = () => {
@@ -38,6 +39,10 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/presentacion" element={<LandingPage />} />
             <Route path="/landing" element={<LandingPage />} />
+            <Route path="/politicas-privacidad" element={<LegalPage type="privacy" />} />
+            <Route path="/eliminacion-datos" element={<LegalPage type="data-deletion" />} />
+            <Route path="/terminos-condiciones" element={<LegalPage type="terms" />} />
+            <Route path="/terminos-servicio" element={<LegalPage type="terms" />} />
             <Route path="/presupuesto/login" element={<Login />} />
             <Route
               path="/presupuesto"
