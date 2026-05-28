@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
@@ -12,6 +12,16 @@ import Login from './components/Login';
 import Presupuesto from './components/Presupuesto';
 import LandingPage from './components/LandingPage';
 import LegalPage from './components/LegalPage';
+
+const PropuestaRedirect: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  React.useEffect(() => {
+    if (slug) {
+      window.location.replace(`/propuestas/${slug}.html`);
+    }
+  }, [slug]);
+  return null;
+};
 // import Chatbot from './components/Chatbot';
 
 const Home: React.FC = () => {
@@ -52,6 +62,7 @@ const App: React.FC = () => {
                 </ProtectedRoute>
               }
             />
+            <Route path="/propuestas/:slug" element={<PropuestaRedirect />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
