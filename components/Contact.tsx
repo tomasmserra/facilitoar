@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="ml-5">
                   <h3 className="text-lg font-bold text-white">Teléfono / WhatsApp</h3>
-                  <p className="mt-1 text-gray-400">+54 2936 408362</p>
+                  <p className="mt-1 text-gray-400">+54 2936 421553</p>
                   <p className="text-sm text-gray-600">Lun-Vie 8am a 7pm</p>
                 </div>
               </div>

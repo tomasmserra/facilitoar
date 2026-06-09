@@ -298,7 +298,7 @@ const LandingPage: React.FC = () => {
                 contacto@facilito.ar
               </div>
               <div style={{ fontSize: '16px', fontWeight: '600', color: '#22c55e' }}>
-                +54 2936 408362 / +54 11 60031450
+                +54 2936 421553 / +54 11 60031450
               </div>
             </div>
             <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '20px' }}>
