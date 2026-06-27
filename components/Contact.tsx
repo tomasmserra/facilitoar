@@ -23,10 +23,10 @@ const Contact: React.FC = () => {
           {/* Contact Info */}
           <div>
             <h2 className="text-3xl font-extrabold text-white mb-6">
-              Hablemos de tu próximo proyecto
+              Hablemos de cómo digitalizar tu empresa
             </h2>
             <p className="text-lg text-gray-400 mb-10">
-              ¿Listo para automatizar tu empresa o desarrollar ese sistema que tenes en mente? Completa el formulario o contáctanos directamente.
+              Si tu comercio, empresa o municipio necesita ordenar procesos, automatizar tareas o incorporar inteligencia artificial, conversemos sobre una solución posible y concreta.
             </p>
 
             <div className="space-y-8">
@@ -117,6 +117,7 @@ const Contact: React.FC = () => {
                       id="service"
                       className="block w-full rounded-xl border-gray-600 shadow-sm focus:border-brand-500 focus:ring-brand-500 bg-gray-900 px-4 py-3.5 text-white outline-none border focus:ring-1 appearance-none"
                     >
+                      <option>PORTE - Sistema de gestión</option>
                       <option>Automatización de Procesos</option>
                       <option>Desarrollo de Software</option>
                       <option>Soporte Técnico</option>

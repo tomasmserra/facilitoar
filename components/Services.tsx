@@ -7,42 +7,42 @@ const Services: React.FC = () => {
     {
       id: '1',
       title: 'Automatización de Procesos (RPA)',
-      description: 'Eliminamos tareas repetitivas mediante robots de software, permitiendo que tu equipo se enfoque en lo estratégico.',
+      description: 'Convertimos tareas manuales y repetitivas en procesos automáticos para que tu equipo gane tiempo y foco operativo.',
       iconName: 'Cpu',
       Icon: Settings
     },
     {
       id: '2',
       title: 'Desarrollo de Software',
-      description: 'Creamos soluciones a medida, desde aplicaciones web progresivas hasta sistemas de gestión internos complejos.',
+      description: 'Creamos sistemas a medida para la realidad de comercios, empresas y municipios del interior, sin copiar modelos pensados para otra escala.',
       iconName: 'Code',
       Icon: Code
     },
     {
       id: '3',
       title: 'Soporte IT Corporativo',
-      description: 'Mantenimiento preventivo y correctivo de infraestructura, helpdesk y soporte a usuarios nivel 1, 2 y 3.',
+      description: 'Acompañamos la operación diaria con soporte cercano, mantenimiento, infraestructura y ayuda técnica para equipos reales.',
       iconName: 'Headset',
       Icon: Headset
     },
     {
       id: '4',
       title: 'Consultoría en Datos',
-      description: 'Transformamos tus datos en información valiosa mediante dashboards interactivos y análisis predictivo.',
+      description: 'Ordenamos información dispersa y la convertimos en tableros, métricas y decisiones claras para dirigir mejor el negocio.',
       iconName: 'BarChart',
       Icon: BarChart
     },
      {
       id: '5',
       title: 'Integración de Sistemas',
-      description: 'Conectamos tus herramientas (CRM, ERP, Marketing) para un flujo de información unificado y sin errores.',
+      description: 'Conectamos ventas, stock, administración, atención y herramientas externas para que la información fluya sin doble carga.',
       iconName: 'Cpu',
       Icon: Database
     },
      {
       id: '6',
       title: 'Inteligencia Artificial',
-      description: 'Implementamos soluciones de IA generativa para atención al cliente y análisis documental.',
+      description: 'Aplicamos IA generativa en atención, documentación, análisis y procesos internos con criterio práctico y resultados medibles.',
       iconName: 'Cpu',
       Icon: Cpu
     },
@@ -57,10 +57,10 @@ const Services: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-brand-500 tracking-wider uppercase">Nuestras Soluciones</h2>
           <p className="mt-2 text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Tecnología para escalar tu negocio
+            Tecnología de primer nivel, pensada para tu realidad
           </p>
           <p className="mt-4 max-w-2xl text-lg text-gray-400 mx-auto">
-            Un ecosistema de servicios diseñado para optimizar recursos y maximizar resultados.
+            No vendemos software aislado. Digitalizamos empresas del interior con herramientas concretas, acompañamiento cercano y foco en operación.
           </p>
         </div>
 

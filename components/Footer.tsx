@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Automatizamos el presente para construir el futuro de tu empresa. Soluciones tecnológicas ágiles y robustas.
+              Digitalizamos empresas del interior argentino con software, automatización e inteligencia artificial pensados para su realidad.
             </p>
           </div>
 
@@ -24,9 +24,9 @@ const Footer: React.FC = () => {
             <h4 className="font-bold mb-6 text-white text-sm uppercase tracking-wider">Servicios</h4>
             <ul className="space-y-3 text-sm text-gray-500">
               <li><a href="#" className="hover:text-brand-400 transition-colors">RPA & Automatización</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Desarrollo Web</a></li>
+              <li><a href="#" className="hover:text-brand-400 transition-colors">Software a medida</a></li>
               <li><a href="#" className="hover:text-brand-400 transition-colors">Soporte IT</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Cloud Computing</a></li>
+              <li><a href="#" className="hover:text-brand-400 transition-colors">Inteligencia Artificial</a></li>
             </ul>
           </div>
 

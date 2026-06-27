@@ -16,14 +16,14 @@ const Hero: React.FC = () => {
           <div className="text-left">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-900 border border-brand-900/50 text-brand-400 text-sm font-semibold mb-6 shadow-sm shadow-brand-900/20">
               <span className="flex h-2 w-2 rounded-full bg-brand-500 mr-2 animate-pulse"></span>
-              Innovación Tecnológica
+              Tecnología para empresas del interior
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Simplificamos procesos, <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">potenciamos tu futuro.</span>
+              Digitalizamos empresas <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">del interior argentino.</span>
             </h1>
             <p className="text-lg text-gray-400 mb-8 max-w-xl leading-relaxed">
-              En Facilito.ar transformamos la complejidad en eficiencia. Especialistas en automatización, desarrollo de software a medida y soporte técnico integral.
+              Acercamos software, automatización e inteligencia artificial de primer nivel a comercios, empresas y municipios que quieren competir de igual a igual desde cualquier ciudad.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -39,15 +39,15 @@ const Hero: React.FC = () => {
             <div className="mt-10 flex items-center gap-6 text-sm text-gray-400">
               <div className="flex items-center">
                 <CheckCircle2 className="h-4 w-4 text-brand-500 mr-2" />
-                Soporte 24/7
+                Hecho desde el interior
               </div>
               <div className="flex items-center">
                 <CheckCircle2 className="h-4 w-4 text-brand-500 mr-2" />
-                Tecnología de punta
+                IA y automatización
               </div>
               <div className="flex items-center">
                 <CheckCircle2 className="h-4 w-4 text-brand-500 mr-2" />
-                Resultados medibles
+                Software a medida
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                             <p className="text-2xl font-bold text-white">+45%</p>
                         </div>
                     </div>
-                    <p className="text-xs text-gray-500 text-center">Incremento promedio en productividad para nuestros clientes.</p>
+                    <p className="text-xs text-gray-500 text-center">Procesos más simples para empresas que quieren escalar sin perder control.</p>
                 </div>
             </div>
              {/* Decorative blob */}
