@@ -53,7 +53,7 @@ const PorteLaunchSection: React.FC = () => {
                 <Boxes className="h-7 w-7 text-brand-400" />
                 <h3 className="mt-4 text-lg font-bold text-white">Planes por escala</h3>
                 <p className="mt-2 text-sm leading-6 text-gray-400">
-                  Bronce, Plata y Oro, con el mismo core de gestión y límites por cantidad de artículos.
+                  Lite, Bronce, Plata y Oro, con el mismo core de gestión y límites por cantidad de artículos.
                 </p>
               </div>
             </div>

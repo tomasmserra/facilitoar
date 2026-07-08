@@ -44,21 +44,25 @@ const differentiators = [
 
 const plans = [
   {
+    name: 'Porte Lite',
+    limit: 'Hasta 300 artículos',
+    description: 'Para negocios muy chicos que quieren dejar de manejarse con anotadores o planillas y empezar a ordenar lo básico.',
+    badge: 'Entrada',
+  },
+  {
     name: 'Porte Bronce',
-    price: '$80.000',
     limit: 'Hasta 1.000 artículos',
     description: 'Para negocios chicos que necesitan ordenar ventas, stock, clientes, compras, caja y cuentas corrientes.',
+    highlighted: true,
+    badge: 'Recomendado',
   },
   {
     name: 'Porte Plata',
-    price: '$160.000',
     limit: 'Hasta 10.000 artículos',
     description: 'Para comercios con más movimiento y mayor volumen de productos.',
-    highlighted: true,
   },
   {
     name: 'Porte Oro',
-    price: '$240.000',
     limit: 'Hasta 30.000 artículos',
     description: 'Para negocios grandes que necesitan más capacidad, soporte más cercano e importaciones más frecuentes.',
   },
@@ -198,11 +202,11 @@ const PorteSection: React.FC = () => {
               <h3 className="mt-2 text-2xl font-extrabold text-white">Mismo sistema, distinta capacidad operativa</h3>
             </div>
             <p className="max-w-xl text-sm leading-6 text-gray-400">
-              Todos los planes incluyen el core de gestión de PORTE. La diferencia principal está en la escala de artículos y el acompañamiento operativo.
+              Todos los planes incluyen el core de gestión de PORTE. La diferencia principal está en la escala de artículos, el volumen operativo y el acompañamiento necesario.
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {plans.map((plan) => (
               <div
                 key={plan.name}
@@ -217,16 +221,16 @@ const PorteSection: React.FC = () => {
                     <h4 className="text-xl font-extrabold text-white">{plan.name}</h4>
                     <p className="mt-2 text-sm font-semibold text-brand-400">{plan.limit}</p>
                   </div>
-                  {plan.highlighted && (
+                  {plan.badge && (
                     <span className="rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-300">
-                      Popular
+                      {plan.badge}
                     </span>
                   )}
                 </div>
 
-                <div className="mt-6">
-                  <span className="text-4xl font-extrabold tracking-tight text-white">{plan.price}</span>
-                  <span className="ml-2 text-sm font-semibold text-gray-500">/mes</span>
+                <div className="mt-6 rounded-xl border border-gray-800 bg-gray-900 px-4 py-3">
+                  <p className="text-sm font-bold text-white">Cotización mensual</p>
+                  <p className="mt-1 text-xs leading-5 text-gray-500">Según modalidad, implementación y necesidades del negocio.</p>
                 </div>
 
                 <p className="mt-5 min-h-20 text-sm leading-6 text-gray-400">{plan.description}</p>
