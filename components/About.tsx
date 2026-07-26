@@ -28,7 +28,7 @@ const About: React.FC = () => {
 
             <div className="space-y-10">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    Facilito nació para demostrar que una empresa no debería tener menos oportunidades por estar lejos de una gran ciudad. Nuestra misión es acercar <strong className="text-brand-400">software, automatización e inteligencia artificial de primer nivel</strong> a comercios, empresas y municipios del interior argentino.
+                    Facilito nació para demostrar que una empresa no debería tener menos oportunidades por estar lejos de una gran ciudad. Nuestra misión es acercar <strong className="text-brand-400">software, automatización e inteligencia artificial de primer nivel</strong> a comercios y empresas del interior argentino.
                 </p>
 
                 <div className="space-y-8">

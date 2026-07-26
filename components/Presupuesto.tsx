@@ -168,7 +168,7 @@ const Presupuesto: React.FC = () => {
     const pageHeight = doc.internal.pageSize.getHeight();
     doc.setFontSize(8);
     doc.setTextColor(128, 128, 128);
-    doc.text('Facilito.ar - Automatizamos el presente para construir el futuro', pageWidth / 2, pageHeight - 10, { align: 'center' });
+    doc.text('Facilito.ar - Simplificamos procesos, potenciamos tu futuro', pageWidth / 2, pageHeight - 10, { align: 'center' });
 
     // Guardar PDF
     doc.save(`presupuesto-${cliente.empresa || cliente.nombre || 'facilito'}-${new Date().toISOString().split('T')[0]}.pdf`);

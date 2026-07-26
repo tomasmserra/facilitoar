@@ -19,11 +19,11 @@ const Hero: React.FC = () => {
               Tecnología para empresas del interior
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Digitalizamos empresas <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">del interior argentino.</span>
+              Simplificamos procesos, <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">potenciamos tu futuro.</span>
             </h1>
             <p className="text-lg text-gray-400 mb-8 max-w-xl leading-relaxed">
-              Acercamos software, automatización e inteligencia artificial de primer nivel a comercios, empresas y municipios que quieren competir de igual a igual desde cualquier ciudad.
+              Acercamos software, automatización e inteligencia artificial de primer nivel a comercios y empresas que quieren competir de igual a igual desde cualquier ciudad.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

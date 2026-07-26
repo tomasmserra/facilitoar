@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
               Hablemos de cómo digitalizar tu empresa
             </h2>
             <p className="text-lg text-gray-400 mb-10">
-              Si tu comercio, empresa o municipio necesita ordenar procesos, automatizar tareas o incorporar inteligencia artificial, conversemos sobre una solución posible y concreta.
+              Si tu comercio o empresa necesita ordenar procesos, automatizar tareas o incorporar inteligencia artificial, conversemos sobre una solución posible y concreta.
             </p>
 
             <div className="space-y-8">

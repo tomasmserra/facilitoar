@@ -147,7 +147,7 @@ const LandingPage: React.FC = () => {
                   Facilito.ar
                 </div>
                 <div style={{ fontSize: '12px', fontWeight: 600, color: '#16a34a', lineHeight: '1.2' }}>
-                  Soluciones Tecnológicas de alto impacto
+                  Simplificamos procesos, potenciamos tu futuro
                 </div>
               </div>
             </div>
@@ -315,7 +315,7 @@ const LandingPage: React.FC = () => {
             fontSize: '12px',
             color: '#9ca3af'
           }}>
-            © {new Date().getFullYear()} Facilito.ar - Automatizamos el presente para construir el futuro
+            © {new Date().getFullYear()} Facilito.ar - Simplificamos procesos, potenciamos tu futuro
           </div>
         </div>
       </div>
@@ -370,10 +370,10 @@ const LandingPage: React.FC = () => {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-              <span className="text-white">Transformamos tu negocio con</span>
+              <span className="text-white">Simplificamos procesos,</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-teal-300 to-brand-500">
-                tecnología inteligente
+                potenciamos tu futuro
               </span>
             </h1>
 

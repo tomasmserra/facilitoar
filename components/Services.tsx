@@ -14,7 +14,7 @@ const Services: React.FC = () => {
     {
       id: '2',
       title: 'Desarrollo de Software',
-      description: 'Creamos sistemas a medida para la realidad de comercios, empresas y municipios del interior, sin copiar modelos pensados para otra escala.',
+      description: 'Creamos sistemas a medida para la realidad de comercios y empresas del interior, sin copiar modelos pensados para otra escala.',
       iconName: 'Code',
       Icon: Code
     },
